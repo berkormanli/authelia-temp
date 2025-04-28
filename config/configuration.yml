@@ -1,0 +1,36 @@
+theme: light
+jwt_secret: ffefbb853e81a6b8890a0bc009416e199f0e3121288b9749d04ff8b400e98112cf48434d58337217a5ce5fdf2d6bf6be2e17b7e80c0e05f040bb17a1d601d0a6
+
+server:
+  host: 0.0.0.0
+  port: 9091
+
+authentication_backend:
+  file:
+    path: /config/users_database.yml
+
+access_control:
+  default_policy: deny
+  rules:
+    - domain: "*.berkormanli.dev"
+      policy: two_factor
+
+session:
+  secret: ae5a7c7060edacfb4b749cb9e000c70672a0905050c1fed4a7f8c47a8a61571a0a0d70cdf5233af18909db3a722025f50f67f819c7fb34cf042189fe331cd39d
+  name: authelia_session
+  expiration: 3600
+  inactivity: 300
+  domain: yourdomain.com
+
+regulation:
+  max_retries: 3
+  find_time: 120
+  ban_time: 300
+
+storage:
+  local:
+    path: /config/db.sqlite3
+
+notifier:
+  filesystem:
+    filename: /config/notification.txt
