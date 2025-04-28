@@ -6,8 +6,6 @@ services:
     container_name: authelia
     environment:
       - TZ=Europe/Istanbul # Change to your timezone
-    volumes:
-      - ./config:/config
     ports:
       - 9091:9091
     restart: unless-stopped
