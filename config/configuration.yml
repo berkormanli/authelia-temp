@@ -20,7 +20,7 @@ session:
   name: authelia_session
   expiration: 3600
   inactivity: 300
-  domain: yourdomain.com
+  domain: berkormanli.dev
 
 regulation:
   max_retries: 3
